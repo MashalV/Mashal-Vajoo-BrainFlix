@@ -1,4 +1,5 @@
 @use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
 
 .player {
   &__video {
@@ -34,14 +35,14 @@
     &--views {
       color: $secondary-text-color;
       padding-bottom: 1rem;
-      & img{
-        padding-right: .5rem;
+      & img {
+        padding-right: 0.5rem;
       }
     }
     &--likes {
       color: $secondary-text-color;
-      & img{
-        padding-right: .5rem;
+      & img {
+        padding-right: 0.5rem;
       }
     }
   }
@@ -50,3 +51,247 @@
     padding: 0 1rem 1rem 1rem;
   }
 }
+
+.comments {
+    margin: 1rem 1rem 0rem 1rem;
+
+    border-bottom: 1px solid $divider-line-color;
+    
+    @include tablet {
+        padding: 2.25rem 2.25rem 0rem 2.25rem;
+    }
+
+    @include desktop {
+        margin: 3.9375rem 3.9375rem 0rem 3.9375rem;
+    }
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  @include desktop {
+    padding: 0 17rem;
+  }
+
+  &__image {
+    border-radius: 50%;
+    max-width: 2.25rem;
+    max-height: 2.25rem;
+    display: flex;
+    margin: 1rem;
+    object-fit: cover;
+    margin-top: 20px;
+    margin-right: 0;
+
+    @include tablet {
+      max-width: 3rem;
+      max-height: 3rem;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+
+    &--comment {
+      color: $secondary-text-color;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 12px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      &--in {
+        min-height: 2.25rem;
+        width: 100%;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        border: 0.0625rem solid $divider-line-color;
+        margin-top: 4px;
+        background-color: $form-background-color;
+        padding-bottom: 48px;
+
+        &::-webkit-input-placeholder {
+          color: $primary-color-text;
+          font-weight: 600;
+          font-style: normal;
+          font-size: 12px;
+          display: flex;
+          align-items: flex-start;
+        }
+
+        &:active {
+          border: 0.0625rem solid $primary-color-text;
+        }
+
+        @include tablet {
+          min-height: 3rem;
+          padding: 16px;
+        }
+      }
+    }
+    &--btn {
+      background-color: $primary-button-color;
+      color: $background-color;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 1rem;
+      border-radius: 4px;
+      margin: 16px;
+      padding: 0.75rem;
+      height: 40px;
+      display: flex;
+
+      @include tablet {
+        display: flex;
+        justify-content: flex-end;
+        align-self: flex-end;
+        align-items: center;
+        min-width: 150px;
+        padding-left: 32px;
+        padding-right: 32px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+
+  &__img {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__text {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+.comment {
+    margin: 1rem;
+    border-bottom: 1px solid $divider-line-color;
+    color: $primary-color-text;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    display: flex;
+    flex-direction:row;
+    padding-bottom: 1rem;
+
+    @include tablet { 
+        margin: 2.25rem;
+        font-size: .875rem;
+        line-height: 1.375rem;  
+    }
+
+    @include desktop { 
+        margin-left: 3.9375rem;
+        margin-right: 3.9375rem;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+    }
+
+    &__wrapper {
+
+        
+        &--text{
+            display:flex;
+            flex-direction: column;
+            width:100%;
+            align-items: center;
+
+            &--box{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                
+                
+            }
+    }
+    
+    
+    &__details {
+        display:flex;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        
+        @include tablet {
+            font-size: .875rem;
+            line-height: 1.375rem;
+        }
+        
+        
+    }
+    
+}
+    
+    &__avatar {
+        width: 100%;
+        border-radius: 50%; 
+        background-color: $divider-line-color;
+        display: flex;
+        object-fit: cover;
+        margin-right: 1rem;
+        margin-top: 0rem;
+        max-width: 2.25rem;
+        max-height:2.25rem;
+
+        @include tablet {
+            max-width: 3rem;
+            max-height: 3rem;
+        }
+    }
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    &__name{
+        font-weight: 600;
+        font-style: normal;
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+
+        @include tablet {
+            font-size: .875rem;
+            line-height: 1.375rem;
+        }
+        
+    }
+
+    &__date{
+        width:50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
+
+        @include tablet {
+            font-size: .875rem;
+            line-height: 1.375rem;
+        }
+        
+    }
+
+}
+
+
