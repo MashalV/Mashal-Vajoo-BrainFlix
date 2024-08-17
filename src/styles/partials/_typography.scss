@@ -3,24 +3,24 @@
 
 @font-face {
     font-family: 'AvenirNext LT Pro';
-    src: url('../assets/fonts/AvenirNextLTPro-Bold.woff2') format('woff2'),
-        url('../assets/fonts/AvenirNextLTPro-Bold.woff') format('woff');
+    src: url('/src/assets/fonts/AvenirNextLTPro-Bold.woff2') format('woff2'),
+        url('/src/assets/fonts/AvenirNextLTPro-Bold.woff') format('woff');
     font-weight: 650;
     
 }
 
 @font-face {
     font-family: 'AvenirNext LT Pro';
-    src: url('../assets/fonts/AvenirNextLTPro-Regular.woff2') format('woff2'),
-        url('../assets/fonts/AvenirNextLTPro-Regular.woff') format('woff');
+    src: url('/src/assets/fonts/AvenirNextLTPro-Regular.woff2') format('woff2'),
+        url('/src/assets/fonts/AvenirNextLTPro-Regular.woff') format('woff');
     font-weight: 400;
     
 }
 
 @font-face {
     font-family: 'AvenirNext LT Pro';
-    src: url('../assets/fonts/AvenirNextLTPro-Demi.woff2') format('woff2'),
-        url('../assets/fonts/AvenirNextLTPro-Demi.woff') format('woff');
+    src: url('/src/assets/fonts/AvenirNextLTPro-Demi.woff2') format('woff2'),
+        url('/src/assets/fonts/AvenirNextLTPro-Demi.woff') format('woff');
     font-weight: 600;
     
 }
@@ -34,7 +34,7 @@ h1 {
     font-size: 1.5rem;
     line-height: 2rem; 
     font-family: "AvenirNext LT Pro", 'Times New Roman', Times, serif;
-    font-weight: 550;
+    font-weight: 700;
     color: $primary-color-text;
 
     @include tablet {
@@ -90,7 +90,7 @@ span {
     font-family: 'AvenirNext LT Pro', 'Times New Roman', Times, serif;
     font-style: normal;
     font-weight: 600;
-    color: $primary-color-text;
+    color: $secondary-text-color;
 
     @include tablet {
         font-size: 2rem;
@@ -134,10 +134,3 @@ footer {
     }
 }
 
-span {
-    font-size: .875rem;
-    line-height: 1.375rem;
-    font-family: 'AvenirNext LT Pro', 'Times New Roman', Times, serif;
-    font-weight: 600;
-    color: $primary-color-text;
-}

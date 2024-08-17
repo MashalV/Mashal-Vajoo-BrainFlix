@@ -1,0 +1,52 @@
+@use "/src/styles/partials/variables" as *;
+
+.player {
+  &__video {
+    height: 150px;
+    aspect-ratio: 16/9;
+    width: 100%;
+  }
+}
+
+.title {
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.mainVid {
+  margin: 1rem;
+  border-top: 1px solid $divider-line-color;
+  border-bottom: 1px solid $divider-line-color;
+  display: flex;
+
+  &__left {
+    padding: 1rem 3rem 1rem 0rem;
+    &--channel {
+      padding-bottom: 1rem;
+    }
+    &--date {
+      color: $secondary-text-color;
+    }
+  }
+
+  &__right {
+    padding-top: 1rem;
+
+    &--views {
+      color: $secondary-text-color;
+      padding-bottom: 1rem;
+      & img{
+        padding-right: .5rem;
+      }
+    }
+    &--likes {
+      color: $secondary-text-color;
+      & img{
+        padding-right: .5rem;
+      }
+    }
+  }
+
+  &__description {
+    padding: 0 1rem 1rem 1rem;
+  }
+}

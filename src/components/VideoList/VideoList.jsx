@@ -1,4 +1,5 @@
 import React from "react";
+import "./VideoList.scss";
 
 function VideoList({ video, setter }) {
   return (
@@ -8,8 +9,9 @@ function VideoList({ video, setter }) {
           setter(video);
         }}
       >
-        <img src={video.image} alt={video.title} />
+        <img class= "list" src={video.image} alt={video.title} />
         {video.title}
+        {video.channel}
       </li>
     </>
   );

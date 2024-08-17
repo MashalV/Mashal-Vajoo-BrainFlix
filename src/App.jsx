@@ -3,6 +3,7 @@ import videos from "../src/data/video-details.json";
 import { useState } from "react";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import VideoList from "./components/VideoList/VideoList";
+import "./App.scss";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Navigation />
+      <VideoDetails video={selectedVideo} />
       <section>
         <ul className="video__list">
           {list.map((video) => (
@@ -20,7 +22,7 @@ function App() {
           ))}
         </ul>
       </section>
-      <VideoDetails video={selectedVideo} />
+      
     </>
   );
 }
