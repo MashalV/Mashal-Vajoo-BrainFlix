@@ -58,8 +58,10 @@ function VideoDetails({ video }) {
         <p>{description}</p>
       </section>
 
+      <h3 className="counter"> {comments.length} Comments</h3>
+
     <section className="comments">
-        <div>amount of comments???</div>
+        
         <card className="card">
             <img className="card__image"src="/src/assets/images/Mohan-muruge.jpg" alt ="picture of mohan"/>
 				<form className="card__wrapper">
@@ -92,6 +94,8 @@ function VideoDetails({ video }) {
             </div>
         ))}
       </section>
+
+      
 
       <label className= "titled">
                 NEXT VIDEOS
