@@ -9,9 +9,17 @@ function VideoList({ video, setter }) {
           setter(video);
         }}
       >
-        <img class= "list" src={video.image} alt={video.title} />
-        {video.title}
-        {video.channel}
+        <section className="list">
+            <img className= "list__img" src={video.image} alt={video.title} />
+            <div className= "list__details">
+                <div className="list__details--title">
+                    {video.title}
+                </div>
+                <div className="list__details--channel">
+                {video.channel}
+                </div>
+            </div>
+        </section>
       </li>
     </>
   );

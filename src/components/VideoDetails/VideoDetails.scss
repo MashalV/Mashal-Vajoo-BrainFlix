@@ -6,6 +6,8 @@
     height: 150px;
     aspect-ratio: 16/9;
     width: 100%;
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -116,7 +118,6 @@
 
         &::-webkit-input-placeholder {
           color: $primary-color-text;
-          font-weight: 600;
           font-style: normal;
           font-size: 12px;
           display: flex;
@@ -124,7 +125,7 @@
         }
 
         &:active {
-          border: 0.0625rem solid $primary-color-text;
+          border: 0.0625rem solid $primary-button-color;
         }
 
         @include tablet {
@@ -138,7 +139,7 @@
       color: $background-color;
       font-weight: 600;
       font-style: normal;
-      font-size: 1rem;
+      font-size: 12px;
       border-radius: 4px;
       margin: 16px;
       padding: 0.75rem;
@@ -155,6 +156,14 @@
         padding-right: 32px;
         height: auto;
       }
+
+      &:hover {
+        background-color: $hover-state-color;
+      }
+
+      
+
+
     }
   }
 }
@@ -295,3 +304,11 @@
 }
 
 
+.titled {
+    color: $secondary-text-color;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 12px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+}

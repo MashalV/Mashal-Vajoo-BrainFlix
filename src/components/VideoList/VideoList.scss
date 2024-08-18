@@ -1,5 +1,41 @@
-.list { 
-    height: 150px;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+
+.list {
+  display: flex;
+  margin: 1rem 1rem 0 1rem;
+  width: 100%;
+  overflow-y: hidden;
+  height:auto;
+
+  &__img {
+    height: 100px;
     aspect-ratio: 16/9;
+    border-radius: 4px;
     width: 100%;
+    background-size: cover;
+    background-position: center;
+    overflow-y: hidden;
+  }
+  &__details {
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-y: hidden;
+
+    &--title {
+      display: flex;
+      justify-content: flex-start;
+      font-weight: 600;
+    }
+    &--channel {
+      display: flex;
+      align-items: flex-end;
+      overflow-y: hidden;
+    }
+  }
 }

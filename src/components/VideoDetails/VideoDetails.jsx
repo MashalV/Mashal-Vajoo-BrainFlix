@@ -92,6 +92,10 @@ function VideoDetails({ video }) {
             </div>
         ))}
       </section>
+
+      <label className= "titled">
+                NEXT VIDEOS
+            </label>
     </>
   );
 }
