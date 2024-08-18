@@ -21,7 +21,7 @@ function Navigation() {
         </div>
         <article className="nav__button btn">
           <img className="btn__image" src="/src/assets/images/icons/upload.svg" alt="upload"></img>
-          <div className="btn__text" > Upload </div>
+          <div className="btn__text" > UPLOAD </div>
         </article>
       </section>
     </>

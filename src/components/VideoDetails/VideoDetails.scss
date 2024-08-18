@@ -2,66 +2,134 @@
 @use "/src/styles/partials/mixins" as *;
 
 .player {
-  &__video {
-    height: auto;
-    aspect-ratio: 16/9;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
-  }
+    &__video {
+        height: auto;
+        aspect-ratio: 16/9;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+
+        @include tablet {
+            padding-left: 32px;
+            background-color: $secondary-video;
+            padding-right: 32px;
+        }
+    }
 }
 
 .title {
-  padding: 1rem 1rem 0rem 1rem;
+    padding: 1rem 1rem 0rem 1rem;
+
+    @include tablet {
+        padding-left: 32px;
+    }
 }
 
 .mainVid {
-  margin: 1rem;
-  border-top: 1px solid $divider-line-color;
-  border-bottom: 1px solid $divider-line-color;
-  display: flex;
+    margin: 1rem;
+    border-top: 1px solid $divider-line-color;
+    border-bottom: 1px solid $divider-line-color;
+    display: flex;
 
-  &__left {
-    padding: 1rem 3rem 1rem 0rem;
-    &--channel {
-      padding-bottom: 1rem;
+    @include tablet {
+        margin-left: 32px;
+        margin-right: 32px;
+        border-top: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
-    &--date {
-      color: $secondary-text-color;
-    }
-  }
 
-  &__right {
-    padding-top: 1rem;
+    &__left {
+        padding: 1rem 3rem 1rem 0rem;
 
-    &--views {
-      color: $secondary-text-color;
-      padding-bottom: 1rem;
-      & img {
-        padding-right: 0.5rem;
-      }
-    }
-    &--likes {
-      color: $secondary-text-color;
-      & img {
-        padding-right: 0.5rem;
-      }
-    }
-  }
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            padding: 0 0 11px 0;
+            align-content: center;
+        }
 
-  &__description {
-    padding: 0 1rem 1rem 1rem;
-  }
+        &--channel {
+            padding-bottom: 1rem;
+
+            @include tablet {
+                padding-right: 2rem;
+                align-content: center;
+                padding-bottom: 0;
+            }
+        }
+
+        &--date {
+            color: $secondary-text-color;
+
+            @include tablet {
+                align-content: center;
+            }
+        }
+    }
+
+    &__right {
+        padding-top: 1rem;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            align-content: center;
+        }
+
+        &--views {
+            color: $secondary-text-color;
+            padding-bottom: 1rem;
+
+            & img {
+                padding-right: 0.5rem;
+
+                @include tablet {
+                    padding-top: 5px
+                }
+            }
+
+            @include tablet {
+                padding-right: 2rem;
+                align-content: center;
+                padding-bottom: 1rem;
+            }
+        }
+
+        &--likes {
+            color: $secondary-text-color;
+
+            & img {
+                padding-right: 0.5rem;
+
+                @include tablet {
+                    padding-top: 5px
+                }
+            }
+        }
+    }
+
+    &__description {
+        padding: 0 1rem 1rem 1rem;
+
+        @include tablet {
+
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+    }
 }
 
 .comments {
     margin: 1rem 1rem 0rem 1rem;
 
     border-bottom: 1px solid $divider-line-color;
-    
+
     @include tablet {
-        padding: 2.25rem 2.25rem 0rem 2.25rem;
+        margin: 2.25rem 2.25rem 0rem 2.25rem;
     }
 
     @include desktop {
@@ -70,119 +138,136 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-
-  @include desktop {
-    padding: 0 17rem;
-  }
-
-  &__image {
-    border-radius: 50%;
-    max-width: 2.25rem;
-    max-height: 2.25rem;
     display: flex;
-    margin: 1rem;
-    object-fit: cover;
-    margin-top: 20px;
-    margin-right: 0;
-
-    @include tablet {
-      max-width: 3rem;
-      max-height: 3rem;
-    }
-  }
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    flex: 1;
 
-    &--comment {
-      color: $secondary-text-color;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 12px;
-      padding-left: 1rem;
-      padding-right: 1rem;
+    @include desktop {
+        padding: 0 17rem;
+    }
 
-      &--in {
-        min-height: 2.25rem;
-        width: 100%;
-        border-radius: 0.25rem;
-        padding: 0.75rem;
-        border: 0.0625rem solid $divider-line-color;
-        margin-top: 4px;
-        background-color: $form-background-color;
-        padding-bottom: 48px;
-
-        &::-webkit-input-placeholder {
-          color: $primary-color-text;
-          font-style: normal;
-          font-size: 12px;
-          display: flex;
-          align-items: flex-start;
-        }
-
-        &:active {
-          border: 0.0625rem solid $primary-button-color;
-        }
+    &__image {
+        border-radius: 50%;
+        max-width: 2.25rem;
+        max-height: 2.25rem;
+        display: flex;
+        margin: 1rem;
+        object-fit: cover;
+        margin-top: 20px;
+        margin-right: 0;
 
         @include tablet {
-          min-height: 3rem;
-          padding: 16px;
+            max-width: 3rem;
+            max-height: 3rem;
+            justify-content: flex-start;;
         }
-      }
     }
-    &--btn {
-      background-color: $primary-button-color;
-      color: $background-color;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 12px;
-      border-radius: 4px;
-      margin: 16px;
-      padding: 0.75rem;
-      height: 40px;
-      display: flex;
 
-      @include tablet {
+    &__wrapper {
         display: flex;
-        justify-content: flex-end;
-        align-self: flex-end;
-        align-items: center;
-        min-width: 150px;
-        padding-left: 32px;
-        padding-right: 32px;
-        height: auto;
-      }
+        flex-direction: column;
+        width: 100%;
+        flex: 1;
 
-      &:hover {
-        background-color: $hover-state-color;
-      }
+        @include tablet {
+            flex-direction: row;
+            width: auto;
+            justify-content: space-between;
+            
+        }
 
-      
+        &--comment {
+            color: $secondary-text-color;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 12px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            &--in {
+                min-height: 2.25rem;
+                width: 100%;
+                border-radius: 0.25rem;
+                padding: 0.75rem;
+                border: 0.0625rem solid $divider-line-color;
+                margin-top: 4px;
+                background-color: $form-background-color;
+                padding-bottom: 48px;
+
+                &::-webkit-input-placeholder {
+                    color: $primary-color-text;
+                    font-style: normal;
+                    font-size: 12px;
+                    display: flex;
+                    align-items: flex-start;
+                }
+
+                &:active {
+                    border: 0.0625rem solid $primary-button-color;
+                }
+
+                @include tablet {
+                    min-height: 3rem;
+                    padding: 16px;
+                    width: 100%;
+                    padding-right: 140px;
+                }
+            }
+        }
+
+        &--btn {
+            background-color: $primary-button-color;
+            color: $background-color;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 12px;
+            border-radius: 4px;
+            margin: 16px;
+            padding: 0.75rem;
+            height: 40px;
+            display: flex;
+
+            @include tablet {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                min-width: 150px;
+                // padding-left: 32px;
+                // padding-right: 32px;
+                height: auto;
+            }
+
+            &:hover {
+                background-color: $hover-state-color;
+            }
 
 
+
+
+        }
     }
-  }
 }
 
 .btn {
-  display: flex;
-  align-items: center;
-  // justify-content: space-between;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
 
-  &__img {
-    display: flex;
-    justify-content: flex-start;
-  }
-  &__text {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
+    &__img {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &__text {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    @include tablet{ 
+        justify-content: flex-start;
+
+    }
 }
 
 
@@ -194,16 +279,16 @@
     font-style: normal;
     font-size: 12px;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     padding-bottom: 1rem;
 
-    @include tablet { 
-        margin: 2.25rem;
+    @include tablet {
+        margin: 16px 2.25rem 16px 2.25rem;
         font-size: .875rem;
-        line-height: 1.375rem;  
+        line-height: 1.375rem;
     }
 
-    @include desktop { 
+    @include desktop {
         margin-left: 3.9375rem;
         margin-right: 3.9375rem;
         justify-content: center;
@@ -213,51 +298,51 @@
 
     &__wrapper {
 
-        
-        &--text{
-            display:flex;
+
+        &--text {
+            display: flex;
             flex-direction: column;
-            width:100%;
+            width: 100%;
             align-items: center;
 
-            &--box{
+            &--box {
                 display: flex;
                 flex-direction: row;
                 width: 100%;
-                
-                
+
+
             }
-    }
-    
-    
-    &__details {
-        display:flex;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 12px;
-        flex-direction: column;
-        margin-bottom: 1rem;
-        
-        @include tablet {
-            font-size: .875rem;
-            line-height: 1.375rem;
         }
-        
-        
+
+
+        &__details {
+            display: flex;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 12px;
+            flex-direction: column;
+            margin-bottom: 1rem;
+
+            @include tablet {
+                font-size: .875rem;
+                line-height: 1.375rem;
+            }
+
+
+        }
+
     }
-    
-}
-    
+
     &__avatar {
         width: 100%;
-        border-radius: 50%; 
+        border-radius: 50%;
         background-color: $divider-line-color;
         display: flex;
         object-fit: cover;
         margin-right: 1rem;
         margin-top: 0rem;
         max-width: 2.25rem;
-        max-height:2.25rem;
+        max-height: 2.25rem;
 
         @include tablet {
             max-width: 3rem;
@@ -271,7 +356,7 @@
     flex-direction: row;
     width: 100%;
 
-    &__name{
+    &__name {
         font-weight: 600;
         font-style: normal;
         font-size: 12px;
@@ -283,11 +368,11 @@
             font-size: .875rem;
             line-height: 1.375rem;
         }
-        
+
     }
 
-    &__date{
-        width:50%;
+    &__date {
+        width: 50%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -299,7 +384,7 @@
             font-size: .875rem;
             line-height: 1.375rem;
         }
-        
+
     }
 
 }
@@ -307,13 +392,26 @@
 
 .titled {
     color: $secondary-text-color;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 12px;
-      padding-left: 1rem;
-      padding-right: 1rem;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include tablet {
+
+        padding-left: 32px;
+        padding-right: 32px;
+    }
 }
 
+
 .counter {
-    margin-left:1rem;
+    margin-left: 1rem;
+
+    @include tablet {
+
+        padding-left: 16px;
+        padding-right: 32px;
+    }
 }

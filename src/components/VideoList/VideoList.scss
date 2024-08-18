@@ -8,6 +8,11 @@
   overflow-y: hidden;
   height:auto;
 
+  @include tablet {
+    margin: 32px;
+    width: 50%;
+  }
+
   &__img {
     height: 100px;
     aspect-ratio: 16/9;
