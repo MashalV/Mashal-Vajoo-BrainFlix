@@ -10,6 +10,13 @@
         width: 100%;
     }
 
+    @include desktop {
+        display: flex;
+        margin-left: 63px;
+        width: 100%;
+        justify-content: space-around;
+    }
+
     &__logo {
         display: flex;
         justify-content: center;
@@ -49,6 +56,10 @@
             margin-right: 1rem;
         }
 
+        @include desktop {
+            margin-right: 180px;
+        }
+
         &:hover {
             background-color: $hover-state-color;
         }
@@ -59,6 +70,12 @@
 
         @include tablet {
             width: 30%;
+
+        }
+
+        @include desktop{
+            width: 20%;
+            margin-left: 120px;
 
         }
 
@@ -103,6 +120,10 @@
                 left: 340px;
             }
 
+            @include desktop {
+                left: 700px;
+            }
+
         }
 
         &--avatar {
@@ -122,6 +143,12 @@
                 width: 2.5rem;
                 height:2.5rem;
                 object-fit: cover;
+            }
+
+
+            @include desktop {
+                right: 4rem;
+                
             }
         }
     }

@@ -18,9 +18,6 @@ function VideoDetails({ video }) {
 
   return (
     <>
-      <section className="player">
-        <video className="player__video" poster={image} src={video} controls />
-      </section>
       <section>
         <h1 className="title">{title}</h1>
       </section>
@@ -46,45 +43,55 @@ function VideoDetails({ video }) {
         <p>{description}</p>
       </section>
       <h3 className="counter"> {comments.length} Comments</h3>
-    <section className="comments">
+      <section className="comments">
         <card className="card">
-            <img className="card__image"src="/src/assets/images/Mohan-muruge.jpg" alt ="picture of mohan"/>
-				<form className="card__wrapper">
-                        <label className="card__wrapper--comment">
-                            JOIN THE CONVERSATION
-                            <input className="card__wrapper--comment--in" type="text" name="comment" placeholder="Add a new comment" required/>
-                        </label>
-                        <button className="card__wrapper--btn btn">
-                            <img className="btn__img" src="/src/assets/images/icons/add_comment.svg" alt="add comment icon" />
-                            <div className = "btn__text">COMMENT</div>
-                        </button>
-                </form>
+          <img
+            className="card__image"
+            src="/src/assets/images/Mohan-muruge.jpg"
+            alt="picture of mohan"
+          />
+          <form className="card__wrapper">
+            <label className="card__wrapper--comment">
+              JOIN THE CONVERSATION
+              <input
+                className="card__wrapper--comment--in"
+                type="text"
+                name="comment"
+                placeholder="Add a new comment"
+                required
+              />
+            </label>
+            <button className="card__wrapper--btn btn">
+              <img
+                className="btn__img"
+                src="/src/assets/images/icons/add_comment.svg"
+                alt="add comment icon"
+              />
+              <div className="btn__text">COMMENT</div>
+            </button>
+          </form>
         </card>
-    </section>
-
-
-        <section>
-        {comments.map((comment) => (
-          <div key={comment.id} className="comment">
-            <div className= "comment__avatar"></div>
-            <div className = "comment__wrapper">
-                <div className = "comment__wrapper--text">
-                    <div class= "comment__wrapper--text--box box">
-                        <h3 className = "box__name">{comment.name}</h3>
-                        <span className = "box__date">{new Date(comment.timestamp).toLocaleDateString()}</span>
-                    </div>
-                </div>
-                    <p className="comment__wrapper--details">{comment.comment}</p>
-            </div>
-            </div>
-        ))}
       </section>
 
+      <section>
+        {comments.map((comment) => (
+          <div key={comment.id} className="comment">
+            <div className="comment__avatar"></div>
+            <div className="comment__wrapper">
+              <div className="comment__wrapper--text">
+                <div class="comment__wrapper--text--box box">
+                  <h3 className="box__name">{comment.name}</h3>
+                  <span className="box__date">
+                    {new Date(comment.timestamp).toLocaleDateString()}
+                  </span>
+                </div>
+              </div>
+              <p className="comment__wrapper--details">{comment.comment}</p>
+            </div>
+          </div>
+        ))}
+      </section>
       
-
-      <label className= "titled">
-                NEXT VIDEOS
-            </label>
     </>
   );
 }

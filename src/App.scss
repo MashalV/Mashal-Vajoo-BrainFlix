@@ -1,1 +1,51 @@
 @use "./styles/partials/global";
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+
+@include desktop{
+
+    .wrapper {
+        display: flex;
+        &__left{ 
+            width: 70%;
+        }
+        &__right{
+            width: 50%;
+            padding-right: 63px;
+            height: auto;
+            border-left: 1px solid $divider-line-color;
+        }
+    }
+}
+
+.titled {
+    color: $secondary-text-color;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include tablet {
+
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    @include desktop {
+        margin-top: 63px;
+        padding-right: 63px;
+    }
+
+
+}
+html {
+    
+    @include tablet {
+        transition: ease all .5s;
+    }
+    
+    @include desktop {
+    transition: ease all .5s;
+}
+}

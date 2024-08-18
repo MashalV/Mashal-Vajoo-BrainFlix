@@ -4,6 +4,7 @@ import { useState } from "react";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import VideoList from "./components/VideoList/VideoList";
 import "./App.scss";
+import Video from "./components/Video/Video";
 
 
 function App() {
@@ -14,14 +15,20 @@ function App() {
   return (
     <>
       <Navigation />
-      <VideoDetails video={selectedVideo} />
-      <section>
-        <ul className="video__list">
-          {list.map((video) => (
-            <VideoList key={video.id} video={video} setter={setSelectedVideo} />
-          ))}
-        </ul>
-      </section>
+      <Video video = {selectedVideo} />
+      <div className = "wrapper">
+        <section className="wrapper__left">
+          <VideoDetails video={selectedVideo} />
+        </section>
+        <section className = "wrapper__right">
+          <label className="titled">NEXT VIDEOS</label>
+          <ul className="video__list">
+            {list.map((video) => (
+              <VideoList key={video.id} video={video} setter={setSelectedVideo} />
+            ))}
+          </ul>
+        </section>
+      </div>
       
     </>
   );

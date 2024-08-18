@@ -1,0 +1,24 @@
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+
+.player {
+    &__video {
+        height: auto;
+        aspect-ratio: 16/9;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+
+        @include tablet {
+            padding-left: 32px;
+            background-color: $secondary-video;
+            padding-right: 32px;
+        }
+
+        @include desktop {
+            padding-left: 170px;
+            padding-right: 170px;
+        }
+    }
+}
