@@ -3,11 +3,12 @@
 
 .player {
   &__video {
-    height: 150px;
+    height: auto;
     aspect-ratio: 16/9;
     width: 100%;
     background-size: cover;
     background-position: center;
+    object-fit: cover;
   }
 }
 

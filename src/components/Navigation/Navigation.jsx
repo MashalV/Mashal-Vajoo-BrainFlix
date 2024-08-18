@@ -12,15 +12,16 @@ function Navigation() {
           />
         </section>
         <div className="nav__search">
-          <img
+          <img className="nav__search--img"
             src="/src/assets/images/icons/search.svg"
             alt="magnifying glass"
           />
-          <input type="text" placeholder ="Search" /> 
+          <input className= "nav__search--in" type="text" placeholder ="Search" /> 
+              <img className="nav__search--avatar" src="/src/assets/images/Mohan-muruge.jpg" alt="mohan"/>
         </div>
-        <article className="nav__button">
-          <img src="/src/assets/images/icons/upload.svg" alt="upload"></img>
-          Upload
+        <article className="nav__button btn">
+          <img className="btn__image" src="/src/assets/images/icons/upload.svg" alt="upload"></img>
+          <div className="btn__text" > Upload </div>
         </article>
       </section>
     </>

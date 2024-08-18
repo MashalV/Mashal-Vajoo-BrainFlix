@@ -1,20 +1,109 @@
-p {
-    color: black;
-}
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
 
 .nav {
-    color: black;
+  margin: 1rem;
 
-    &__logo {
-        color: black;
+  &__logo {
+    display: flex;
+    justify-content: center;
+  }
+  &__button {
+    background-color: $primary-button-color;
+    color: $background-color;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    height: 40px;
+    display: flex;
 
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+      align-self: flex-end;
+      align-items: center;
+      min-width: 150px;
+      padding-left: 32px;
+      padding-right: 32px;
+      height: auto;
     }
-    &__button{
-        color: black;
 
+    &:hover {
+      background-color: $hover-state-color;
     }
-    &__search{
-        color: black;
+  }
+  &__search {
+    display:flex;
+    &--in {
+      color: black;
+      max-height: 2.25rem;
+      margin-top:1rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      padding-left: 2rem;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      border: 0.0625rem solid $divider-line-color;
+      background-color: $form-background-color;
 
+      &::-webkit-input-placeholder {
+        color: $primary-color-text;
+        font-style: normal;
+        font-size: 12px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      &:active {
+        border: 0.0625rem solid $primary-button-color;
+      }
+
+      @include tablet {
+        min-height: 3rem;
+        padding: 16px;
+      }
     }
+
+    &--img {
+        position: absolute;
+        top: 65px;
+        left: 26px;
+        
+    }
+
+    &--avatar {
+      border-radius: 50%;
+      max-width: 2.25rem;
+      max-height: 2.25rem;
+      display: flex;
+      margin-left: 1rem;
+      object-fit: cover;
+      margin-top: 20px;
+      margin-right: 0;
+
+      @include tablet {
+        max-width: 3rem;
+        max-height: 3rem;
+      }
+    }
+  }
 }
+
+.btn {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+  
+    &__img {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &__text {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }

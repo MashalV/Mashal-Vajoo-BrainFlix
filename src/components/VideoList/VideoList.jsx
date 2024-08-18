@@ -4,12 +4,11 @@ import "./VideoList.scss";
 function VideoList({ video, setter }) {
   return (
     <>
-      <li
+      <li className = "list"
         onClick={() => {
           setter(video);
         }}
       >
-        <section className="list">
             <img className= "list__img" src={video.image} alt={video.title} />
             <div className= "list__details">
                 <div className="list__details--title">
@@ -19,7 +18,6 @@ function VideoList({ video, setter }) {
                 {video.channel}
                 </div>
             </div>
-        </section>
       </li>
     </>
   );
