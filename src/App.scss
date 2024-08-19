@@ -2,6 +2,18 @@
 @use "/src/styles/partials/variables" as *;
 @use "/src/styles/partials/mixins" as *;
 
+
+html {
+    
+    @include tablet {
+        transition: ease all .5s;
+    }
+    
+    @include desktop {
+    transition: ease all .5s;
+}
+}
+
 @include desktop{
 
     .wrapper {
@@ -25,6 +37,7 @@
     font-size: 12px;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-bottom: 1rem;
 
     @include tablet {
 
@@ -38,14 +51,4 @@
     }
 
 
-}
-html {
-    
-    @include tablet {
-        transition: ease all .5s;
-    }
-    
-    @include desktop {
-    transition: ease all .5s;
-}
 }
