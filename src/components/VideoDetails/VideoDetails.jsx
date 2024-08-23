@@ -1,21 +1,37 @@
 import React from "react";
 import "./VideoDetails.scss";
+import { useEffect, useState } from "react";
 import Comments from "../Comments/Comments";
+import axios from "axios";
 
-function VideoDetails({ video }) {
-  const {
-    id,
-    title,
-    channel,
-    image,
-    description,
-    views,
-    likes,
-    timestamp,
-    comments,
-  } = video;
+function VideoDetails({ id }) {
+  console.log(id);
 
-  console.log(video);
+  const [videos, setVideos] = useState(null);
+
+  useEffect(() => {
+    if (id === null) return;
+
+    const getVideos = async () => {
+      let baseURL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
+      let apiKey = "c41dc0e3-c48e-4dc1-8c03-1f8fcc163099";
+      const response = await axios.get(
+        `${baseURL}videos/${id}/?api_key=${apiKey}`
+      );
+      console.log(response.data);
+      setVideos(response.data);
+    };
+    getVideos();
+  }, [id]);
+
+  if (videos === null) {
+    return <div>Loading ...</div>;
+  }
+
+  const { title, channel, description, views, likes, timestamp, comments, image } =
+    videos;
+
+  console.log(videos);
 
   return (
     <>
@@ -45,7 +61,7 @@ function VideoDetails({ video }) {
       </section>
       <h3 className="counter"> {comments.length} Comments</h3>
       <section className="comments">
-        <card className="card">
+        <section className="card">
           <img
             className="card__image"
             src="/src/assets/images/Mohan-muruge.jpg"
@@ -71,9 +87,9 @@ function VideoDetails({ video }) {
               <div className="btn__text">COMMENT</div>
             </button>
           </form>
-        </card>
+        </section>
       </section>
-      <Comments comments={comments}/> 
+      <Comments comments={comments} />
     </>
   );
 }
