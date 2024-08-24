@@ -8,20 +8,40 @@
   display: flex;
   flex-direction: column;
 
+  @include tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   &__title {
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    @include tablet {
+        border-bottom: 1px solid $divider-line-color;
+    }
+
   }
 
   &__thumb {
     font-weight: 600;
 
+    @include tablet {
+        padding-top: 1rem;
+    }
+
     &--img {
       width: auto;
       height: auto;
       border-radius: 4px;
+
+      @include tablet {
+        width: 50%;
     }
+    }
+
+    
   }
 
   &__add {
@@ -56,6 +76,8 @@
   &__description {
     font-weight: 600;
     padding-top: 1rem;
+
+    
 
     &--in {
       color: black;
@@ -111,6 +133,23 @@
       display: flex;
       width: 100%;
       justify-content: center;
+
+      &:hover {
+        background-color: $hover-state-color;
+      }
+
+      
+    }
+
+    @include tablet {
+        display: flex;
+        justify-content: flex-end;
+        align-self: flex-end;
+        align-items: flex-end;
+        min-width: 150px;
+        height: auto;
+        margin-left: 0.5rem;
+        margin-right: 1rem;
     }
   }
 
@@ -133,5 +172,35 @@
     &:hover {
       background-color: $hover-state-color;
     }
+
+    @include tablet {
+        display: flex;
+        min-width: 150px;
+        height: auto;
+        margin-left: 0.5rem;
+        margin-right: 1rem;
+        margin-bottom: 0rem;
+    }
   }
+}
+
+
+.box {
+    @include tablet {
+        margin-top: 2rem;
+        padding-top: .5rem;
+        border-top: 1px solid $divider-line-color;
+
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+    &__pub{
+        display: flex;
+
+    }
+    &__can{
+        display: flex;
+
+    }
 }
