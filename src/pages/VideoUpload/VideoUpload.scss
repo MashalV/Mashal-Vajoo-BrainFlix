@@ -1,0 +1,137 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+
+.upload {
+  border-top: 1px solid $divider-line-color;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__thumb {
+    font-weight: 600;
+
+    &--img {
+      width: auto;
+      height: auto;
+      border-radius: 4px;
+    }
+  }
+
+  &__add {
+    font-weight: 600;
+    padding-top: 1rem;
+
+    &--in {
+      color: black;
+      max-height: 2.25rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 0.5rem;
+      border: 0.0625rem solid $divider-line-color;
+      background-color: $form-background-color;
+
+      &::-webkit-input-placeholder {
+        color: $primary-color-text;
+        font-style: normal;
+        font-size: 12px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      &:active {
+        border: 0.0625rem solid $primary-button-color;
+      }
+    }
+  }
+
+  &__description {
+    font-weight: 600;
+    padding-top: 1rem;
+
+    &--in {
+      color: black;
+      max-height: 2.25rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      padding-left: 0.5rem;
+      padding-top: 12px;
+      padding-bottom: 5rem;
+      border: 0.0625rem solid $divider-line-color;
+      background-color: $form-background-color;
+
+      &::-webkit-input-placeholder {
+        color: $primary-color-text;
+        font-style: normal;
+        font-size: 12px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      &:active {
+        border: 0.0625rem solid $primary-button-color;
+      }
+    }
+  }
+
+  &__publish {
+    background-color: $primary-button-color;
+    color: $background-color;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: $hover-state-color;
+    }
+
+    &--img {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    &--btn {
+      border: none;
+      background-color: $primary-button-color;
+      color: $background-color;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__cancel {
+    background-color: $background-color;
+    color: $primary-button-color;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-bottom: 1rem;
+
+    &:hover {
+      background-color: $hover-state-color;
+    }
+  }
+}
