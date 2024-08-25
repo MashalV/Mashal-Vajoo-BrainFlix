@@ -1,0 +1,41 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+
+.upload {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include desktop {
+    // padding-left: 3.9375rem;
+    // padding-right: 3.9375rem;
+  }
+
+  &__thumb {
+    font-weight: 600;
+
+    @include tablet {
+      padding-top: 1rem;
+    }
+
+    &--img {
+      width: auto;
+      height: auto;
+      border-radius: 4px;
+
+      @include tablet {
+        width: 50%;
+      }
+
+      @include desktop {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+
+.upload {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include desktop {
+    border: none;
+    width: 100%;
+  }
+
+  &__add {
+    font-weight: 600;
+    padding-top: 1rem;
+
+    &--in {
+      color: black;
+      max-height: 2.25rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 0.5rem;
+      border: 0.0625rem solid $divider-line-color;
+      background-color: $form-background-color;
+
+      &::-webkit-input-placeholder {
+        color: $primary-color-text;
+        font-style: normal;
+        font-size: 12px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      &:active {
+        border: 0.0625rem solid $primary-button-color;
+      }
+    }
+  }
+
+  &__description {
+    font-weight: 600;
+    padding-top: 1rem;
+
+    
+
+    &--in {
+      color: black;
+      max-height: 2.25rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      padding-left: 0.5rem;
+      padding-top: 12px;
+      padding-bottom: 5rem;
+      border: 0.0625rem solid $divider-line-color;
+      background-color: $form-background-color;
+
+      &::-webkit-input-placeholder {
+        color: $primary-color-text;
+        font-style: normal;
+        font-size: 12px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      &:active {
+        border: 0.0625rem solid $primary-button-color;
+      }
+    }
+  }
+
+}

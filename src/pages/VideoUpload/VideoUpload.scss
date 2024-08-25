@@ -2,7 +2,6 @@
 @use "/src/styles/partials/variables" as *;
 
 .upload {
-  border-top: 1px solid $divider-line-color;
   padding-left: 1rem;
   padding-right: 1rem;
   display: flex;
@@ -13,194 +12,61 @@
     padding-right: 2rem;
   }
 
+  @include desktop {
+    // padding-left: 3.9375rem;
+    // padding-right: 3.9375rem;
+  }
+
+  
+
   &__title {
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
 
     @include tablet {
-        border-bottom: 1px solid $divider-line-color;
+      border-bottom: 1px solid $divider-line-color;
     }
 
-  }
+    @include desktop {
+        margin-left: 3.9375rem;
+        margin-right: 3.9375rem;
+        border-bottom: 2px solid $divider-line-color;
 
-  &__thumb {
-    font-weight: 600;
-
-    @include tablet {
-        padding-top: 1rem;
-    }
-
-    &--img {
-      width: auto;
-      height: auto;
-      border-radius: 4px;
-
-      @include tablet {
-        width: 50%;
-    }
-    }
-
-    
-  }
-
-  &__add {
-    font-weight: 600;
-    padding-top: 1rem;
-
-    &--in {
-      color: black;
-      max-height: 2.25rem;
-      width: 100%;
-      border-radius: 0.25rem;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      padding-left: 0.5rem;
-      border: 0.0625rem solid $divider-line-color;
-      background-color: $form-background-color;
-
-      &::-webkit-input-placeholder {
-        color: $primary-color-text;
-        font-style: normal;
-        font-size: 12px;
-        display: flex;
-        align-items: flex-start;
-      }
-
-      &:active {
-        border: 0.0625rem solid $primary-button-color;
-      }
-    }
-  }
-
-  &__description {
-    font-weight: 600;
-    padding-top: 1rem;
-
-    
-
-    &--in {
-      color: black;
-      max-height: 2.25rem;
-      width: 100%;
-      border-radius: 0.25rem;
-      padding-left: 0.5rem;
-      padding-top: 12px;
-      padding-bottom: 5rem;
-      border: 0.0625rem solid $divider-line-color;
-      background-color: $form-background-color;
-
-      &::-webkit-input-placeholder {
-        color: $primary-color-text;
-        font-style: normal;
-        font-size: 12px;
-        display: flex;
-        align-items: flex-start;
-      }
-
-      &:active {
-        border: 0.0625rem solid $primary-button-color;
-      }
-    }
-  }
-
-  &__publish {
-    background-color: $primary-button-color;
-    color: $background-color;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 12px;
-    border-radius: 4px;
-    margin-top: 1rem;
-    padding: 0.75rem;
-    height: 40px;
-    display: flex;
-    align-items: center;
-
-    &:hover {
-      background-color: $hover-state-color;
-    }
-
-    &--img {
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    &--btn {
-      border: none;
-      background-color: $primary-button-color;
-      color: $background-color;
-      display: flex;
-      width: 100%;
-      justify-content: center;
-
-      &:hover {
-        background-color: $hover-state-color;
-      }
-
-      
-    }
-
-    @include tablet {
-        display: flex;
-        justify-content: flex-end;
-        align-self: flex-end;
-        align-items: flex-end;
-        min-width: 150px;
-        height: auto;
-        margin-left: 0.5rem;
-        margin-right: 1rem;
-    }
-  }
-
-  &__cancel {
-    background-color: $background-color;
-    color: $primary-button-color;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 12px;
-    border-radius: 4px;
-    margin-top: 1rem;
-    padding: 0.75rem;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    margin-bottom: 1rem;
-
-    &:hover {
-      background-color: $hover-state-color;
-    }
-
-    @include tablet {
-        display: flex;
-        min-width: 150px;
-        height: auto;
-        margin-left: 0.5rem;
-        margin-right: 1rem;
-        margin-bottom: 0rem;
     }
   }
 }
 
-
-.box {
-    @include tablet {
-        margin-top: 2rem;
-        padding-top: .5rem;
-        border-top: 1px solid $divider-line-color;
-
+.wrapper {
+    @include desktop {
         display: flex;
-        flex-direction: row-reverse;
-
+        width: 100%;
+        border: none;
+        margin-left: 3.9375rem;
+        margin-right: 3.9375rem;
     }
-    &__pub{
+
+    &__left {
+      @include desktop {
         display: flex;
-
+        width: 50%;
+        border: none;
+      }
     }
-    &__can{
+
+    &__right {
+      @include desktop {
         display: flex;
-
+        width: 100%;
+        border:none;
+      }
     }
+  }
+
+
+.border {
+    border-bottom: 1px solid $divider-line-color;
+
+    
+    
 }
