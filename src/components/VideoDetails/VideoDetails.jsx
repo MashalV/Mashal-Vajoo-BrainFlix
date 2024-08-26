@@ -12,6 +12,8 @@ function VideoDetails({ id }) {
   useEffect(() => {
     if (id === null) return;
 
+    window.scrollTo(0, 0);
+
     const getVideos = async () => {
       let baseURL = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
       let apiKey = "c41dc0e3-c48e-4dc1-8c03-1f8fcc163099";

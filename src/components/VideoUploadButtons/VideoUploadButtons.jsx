@@ -18,12 +18,12 @@ function VideoUploadButtons() {
   return (
     <>
         <section className= "upload">
-            <section className= "box">
-              <section className = "upload__publish box__pub">
+            <section className= "container">
+              <section className = "upload__publish container__pub">
                 <img className="upload__publish--img" src="/src/assets/images/icons/upload.svg" alt="upload"></img>
                 <button onClick = {handlePublishClick} className = "upload__publish--btn"> PUBLISH </button>
               </section>
-              <button className = "upload__cancel box__can"> CANCEL </button>
+              <button className = "upload__cancel container__can"> CANCEL </button>
             </section>
 
             {successMessage && (

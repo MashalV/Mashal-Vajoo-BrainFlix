@@ -14,11 +14,11 @@ function VideoUpload() {
         <section className= "upload">
             <h1 className = "upload__title">Upload Video</h1>
         </section>
-        <div className = "wrapper">
-          <section className= "wrapper__left">
+        <div className = "wrap">
+          <section className= "wrap__left">
             <VideoUploadThumbnail />
           </section>
-          <section className= "wrapper__right">
+          <section className= "wrap__right">
             <VideoUploadInputs /> 
           </section>
         </div>
