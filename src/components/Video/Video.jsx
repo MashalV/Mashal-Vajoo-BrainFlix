@@ -12,9 +12,11 @@ function Video({ id }) {
         if (id === null) return;
 
         const getVideos = async () => {
-            let baseURL ="https://unit-3-project-api-0a5620414506.herokuapp.com/"
-            let apiKey =  "c41dc0e3-c48e-4dc1-8c03-1f8fcc163099"
-            const response = await axios.get(`${baseURL}videos/${id}/?api_key=${apiKey}`)
+            // let baseURL ="https://unit-3-project-api-0a5620414506.herokuapp.com/"
+            // let apiKey =  "c41dc0e3-c48e-4dc1-8c03-1f8fcc163099"
+            // const response = await axios.get(`${baseURL}videos/${id}/?api_key=${apiKey}`)
+            let baseURL = "http://localhost:8080/"
+            const response = await axios.get(`${baseURL}videos/${id}`)
             console.log(response.data);
             setVideos(response.data);
         }
