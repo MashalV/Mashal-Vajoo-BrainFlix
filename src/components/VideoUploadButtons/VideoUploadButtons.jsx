@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import "./VideoUploadButtons.scss";
 import { useNavigate } from 'react-router-dom';
 
-function VideoUploadButtons() {
+function VideoUploadButtons({ onFormSubmit }) {
 
     const [successMessage, setSuccessMessage] = useState (false);
     const navigate = useNavigate(); 
 
-    const handlePublishClick = () => {
+    const handlePublishClick =  async () => {
+
+        await onFormSubmit();
+        
         setSuccessMessage(true);
 
         setTimeout(()=>{

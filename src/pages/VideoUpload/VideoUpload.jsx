@@ -4,8 +4,48 @@ import "./VideoUpload.scss";
 import VideoUploadThumbnail from '../../components/VideoUploadThumbnail/VideoUploadThumbnail';
 import VideoUploadInputs from '../../components/VideoUploadInputs/VideoUploadInputs';
 import VideoUploadButtons from '../../components/VideoUploadButtons/VideoUploadButtons';
+import { useState } from "react";
+
 
 function VideoUpload() {
+
+  const [videoDetails, setVideoDetails] = useState ({
+    title: '',
+    description: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setVideoDetails((details) => ({
+      ...details,
+      [name]: value
+    }));
+  };
+
+  const handleFormSubmit = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/videos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(videoDetails),
+      });
+
+      // if (response.ok) {
+      //   setSuccessMessage(true);
+      //   setTimeout(() => {
+      //     navigate('/');
+      //   }, 2000);
+      // } else {
+      //   return;
+      // }
+    } catch (error) {
+      console.error('Error posting video:', error);
+    }
+  };
+
+
   return (
     <>  
         <section className = "border">
@@ -19,10 +59,12 @@ function VideoUpload() {
             <VideoUploadThumbnail />
           </section>
           <section className= "wrap__right">
-            <VideoUploadInputs /> 
+            <VideoUploadInputs 
+              videoDetails = {videoDetails}
+              onInputChange ={handleInputChange} /> 
           </section>
         </div>
-        <VideoUploadButtons />
+        <VideoUploadButtons onFormSubmit = {handleFormSubmit} />
 
     </>
   )
