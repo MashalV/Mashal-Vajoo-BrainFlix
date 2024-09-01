@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./VideoUploadButtons.scss";
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function VideoUploadButtons({ onFormSubmit }) {
 
@@ -10,7 +11,7 @@ function VideoUploadButtons({ onFormSubmit }) {
     const handlePublishClick =  async () => {
 
         await onFormSubmit();
-        
+
         setSuccessMessage(true);
 
         setTimeout(()=>{
@@ -26,7 +27,9 @@ function VideoUploadButtons({ onFormSubmit }) {
                 <img className="upload__publish--img" src="/src/assets/images/icons/upload.svg" alt="upload"></img>
                 <button onClick = {handlePublishClick} className = "upload__publish--btn"> PUBLISH </button>
               </section>
-              <button className = "upload__cancel container__can"> CANCEL </button>
+              <Link to= "/">
+                <button className = "upload__cancel container__can"> CANCEL </button>
+              </Link>
             </section>
 
             {successMessage && (
