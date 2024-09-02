@@ -8,7 +8,8 @@ function VideoUploadButtons({ onFormSubmit }) {
     const [successMessage, setSuccessMessage] = useState (false);
     const navigate = useNavigate(); 
 
-    const handlePublishClick =  async () => {
+    const handlePublishClick =  async (e) => {
+        e.preventDefault();
 
         await onFormSubmit();
 
@@ -21,11 +22,11 @@ function VideoUploadButtons({ onFormSubmit }) {
 
   return (
     <>
-        <section className= "upload">
+        <div className= "upload">
             <section className= "container">
               <section className = "upload__publish container__pub">
                 <img className="upload__publish--img" src="/src/assets/images/icons/upload.svg" alt="upload"></img>
-                <button onClick = {handlePublishClick} className = "upload__publish--btn"> PUBLISH </button>
+                <button onClick = {handlePublishClick}  type="submit" className="upload__publish--btn"> PUBLISH </button>
               </section>
               <Link to= "/">
                 <button className = "upload__cancel container__can"> CANCEL </button>
@@ -35,7 +36,7 @@ function VideoUploadButtons({ onFormSubmit }) {
             {successMessage && (
             <div className ="success"> Published! Redirecting ... </div>
         )}
-        </section>
+        </div>
 
         
     </>

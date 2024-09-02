@@ -5,7 +5,7 @@ import Comments from "../Comments/Comments";
 import axios from "axios";
 
 function VideoDetails({ id }) {
-  console.log(id);
+  console.log();
 
   const [videos, setVideos] = useState(null);
 
