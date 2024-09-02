@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/videos/:idFromParams" element={<HomePage />}></Route>
           <Route path="/VideoUpload" element={<VideoUpload />}></Route>
+          <Route path="*" element= {<div> 404 Not Found </div>}> </Route>
         </Routes>
       </BrowserRouter>
   );
