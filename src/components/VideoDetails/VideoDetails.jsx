@@ -9,26 +9,26 @@ function VideoDetails({ id }) {
 
   const [videos, setVideos] = useState(null);
 
-  // useEffect(() => {
-  //   if (id === null) return;
+  useEffect(() => {
+    if (id === null) return;
 
-  //   window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
 
-  //   const getVideos = async () => {
-  //     let baseURL = "http://localhost:8080/"
-  //     const response = await axios.get(`${baseURL}videos/${id}`);
-  //     console.log(response.data);
-  //     setVideos(response.data);
-  //   };
-  //   getVideos();
-  // }, [id]);
+    const getVideos = async () => {
+      let baseURL = "http://localhost:8080/"
+      const response = await axios.get(`${baseURL}videos/${id}`);
+      console.log(response.data);
+      setVideos(response.data);
+    };
+    getVideos();
+  }, [id]);
 
-  // if (videos === null) {
-  //   return <div>Loading ...</div>;
-  // }
+  if (videos === null) {
+    return <div>Loading ...</div>;
+  }
 
   const { title, channel, description, views, likes, timestamp, comments, image } =
-    details;
+    videos;
 
 
   return (

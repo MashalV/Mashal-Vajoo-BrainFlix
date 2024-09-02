@@ -46,7 +46,7 @@ function Homepage() {
       <Video id = {videoIdToDisplay} />
       <div className = "wrapper">
         <section className="wrapper__left">
-          <VideoDetails id={videoIdToDisplay} details = {details} />
+          <VideoDetails id={videoIdToDisplay}/>
         </section>
         <section className = "wrapper__right">
           <label className="titled">NEXT VIDEOS</label>

@@ -5,9 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import VideoUpload from "./pages/VideoUpload/VideoUpload";
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
-  const list = videos.filter((v) => v.id !== selectedVideo.id);
 
   return (
       <BrowserRouter>
