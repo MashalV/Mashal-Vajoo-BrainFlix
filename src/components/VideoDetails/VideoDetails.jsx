@@ -4,33 +4,32 @@ import { useEffect, useState } from "react";
 import Comments from "../Comments/Comments";
 import axios from "axios";
 
-function VideoDetails({ id }) {
-  console.log();
+function VideoDetails({ id, details }) {
+  console.log(details);
 
   const [videos, setVideos] = useState(null);
 
-  useEffect(() => {
-    if (id === null) return;
+  // useEffect(() => {
+  //   if (id === null) return;
 
-    window.scrollTo(0, 0);
+  //   window.scrollTo(0, 0);
 
-    const getVideos = async () => {
-      let baseURL = "http://localhost:8080/"
-      const response = await axios.get(`${baseURL}videos/${id}`);
-      console.log(response.data);
-      setVideos(response.data);
-    };
-    getVideos();
-  }, [id]);
+  //   const getVideos = async () => {
+  //     let baseURL = "http://localhost:8080/"
+  //     const response = await axios.get(`${baseURL}videos/${id}`);
+  //     console.log(response.data);
+  //     setVideos(response.data);
+  //   };
+  //   getVideos();
+  // }, [id]);
 
-  if (videos === null) {
-    return <div>Loading ...</div>;
-  }
+  // if (videos === null) {
+  //   return <div>Loading ...</div>;
+  // }
 
   const { title, channel, description, views, likes, timestamp, comments, image } =
-    videos;
+    details;
 
-  console.log(videos);
 
   return (
     <>
@@ -58,7 +57,7 @@ function VideoDetails({ id }) {
       <section className="mainVid__description">
         <p>{description}</p>
       </section>
-      <h3 className="counter"> {comments.length} Comments</h3>
+      {/* <h3 className="counter"> {comments.length} Comments</h3> */}
       <section className="comments">
         <section className="card">
           <img

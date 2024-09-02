@@ -42,32 +42,32 @@ function Homepage() {
     }, [])
 
 
-    // useEffect(() => {
-    //   if (videoIdToDisplay === null) return;
+    useEffect(() => {
+      if (videoIdToDisplay === null) return;
   
-    //   window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
   
-    //   const getDetails = async () => {
-    //     let baseURL = "http://localhost:8080/"
-    //     const detailResponse = await axios.get(`${baseURL}videos/${videoIdToDisplay}`);
-    //     console.log(detailResponse.data);
-    //     setDetails(detailResponse.data);
-    //   };
-    //   getDetails();
-    // }, [videoIdToDisplay]);
+      const getDetails = async () => {
+        let baseURL = "http://localhost:8080/"
+        const detailResponse = await axios.get(`${baseURL}videos/${videoIdToDisplay}`);
+        console.log(detailResponse.data);
+        setDetails(detailResponse.data);
+      };
+      getDetails();
+    }, [videoIdToDisplay]);
   
-    // if (videos === null) {
-    //   return <div>Loading ...</div>;
-    // }
+    if (videos === null) {
+      return <div>Loading ...</div>;
+    }
 
 
   return (
     <>
       <Navigation />
-      <Video id = {videoIdToDisplay}/>
+      <Video id = {videoIdToDisplay} details = {details}/>
       <div className = "wrapper">
         <section className="wrapper__left">
-          <VideoDetails id={videoIdToDisplay} />
+          <VideoDetails id={videoIdToDisplay} details = {details} />
         </section>
         <section className = "wrapper__right">
           <label className="titled">NEXT VIDEOS</label>
