@@ -4,10 +4,14 @@ import "./VideoUpload.scss";
 import VideoUploadThumbnail from '../../components/VideoUploadThumbnail/VideoUploadThumbnail';
 import VideoUploadInputs from '../../components/VideoUploadInputs/VideoUploadInputs';
 import VideoUploadButtons from '../../components/VideoUploadButtons/VideoUploadButtons';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 function VideoUpload() {
+
+    useEffect(() => {
+      document.title = 'BrainFlix - Video Upload';
+    }, []);
 
   const [videoDetails, setVideoDetails] = useState ({
     title: '',

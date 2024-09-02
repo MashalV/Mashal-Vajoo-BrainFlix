@@ -31,6 +31,7 @@ function Homepage() {
 
 
     useEffect(() => {
+        document.title = 'BrainFlix HomePage';
         const getVideos = async () => {
             let baseURL = "http://localhost:8080/"
             const response = await axios.get(`${baseURL}videos`)
