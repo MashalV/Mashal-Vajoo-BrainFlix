@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import Comments from "../Comments/Comments";
 import axios from "axios";
 
-function VideoDetails({ id, details }) {
-  console.log(details);
+function VideoDetails({ id }) {
+  console.log(id);
 
   const [videos, setVideos] = useState(null);
 

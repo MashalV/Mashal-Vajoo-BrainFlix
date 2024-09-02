@@ -5,7 +5,9 @@ import HomePage from "./pages/HomePage/HomePage";
 import VideoUpload from "./pages/VideoUpload/VideoUpload";
 
 function App() {
+  const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
+  const list = videos.filter((v) => v.id !== selectedVideo.id);
 
   return (
       <BrowserRouter>
@@ -13,7 +15,6 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/videos/:idFromParams" element={<HomePage />}></Route>
           <Route path="/VideoUpload" element={<VideoUpload />}></Route>
-          <Route path="*" element= {<div> 404 Not Found </div>}> </Route> 
         </Routes>
       </BrowserRouter>
   );

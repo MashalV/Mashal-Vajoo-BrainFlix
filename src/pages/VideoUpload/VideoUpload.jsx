@@ -31,19 +31,23 @@ function VideoUpload() {
         },
         body: JSON.stringify(videoDetails),
       });
+
+      // if (response.ok) {
+      //   setSuccessMessage(true);
+      //   setTimeout(() => {
+      //     navigate('/');
+      //   }, 2000);
+      // } else {
+      //   return;
+      // }
     } catch (error) {
       console.error('Error posting video:', error);
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleFormSubmit();
-  };
-
 
   return (
-    <form onSubmit = {handleSubmit}>  
+    <>  
         <section className = "border">
           <Navigation  /> 
         </section>
@@ -60,8 +64,9 @@ function VideoUpload() {
               onInputChange ={handleInputChange} /> 
           </section>
         </div>
-        <VideoUploadButtons onFormSubmit = {handleFormSubmit}  />
-    </form>
+        <VideoUploadButtons onFormSubmit = {handleFormSubmit} />
+
+    </>
   )
 }
 

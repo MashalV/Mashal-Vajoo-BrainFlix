@@ -14,7 +14,6 @@ function Homepage() {
     const { idFromParams } = useParams();
 
     const [videos, setVideos] = useState([]);
-    const [details, setDetails] = useState([]);
 
     let defaultVideoId = null;
 
@@ -35,36 +34,16 @@ function Homepage() {
         const getVideos = async () => {
             let baseURL = "http://localhost:8080/"
             const response = await axios.get(`${baseURL}videos`)
-            console.log(response.data)
             setVideos(response.data);
         }
         getVideos();
     }, [])
 
 
-    useEffect(() => {
-      if (videoIdToDisplay === null) return;
-  
-      window.scrollTo(0, 0);
-  
-      const getDetails = async () => {
-        let baseURL = "http://localhost:8080/"
-        const detailResponse = await axios.get(`${baseURL}videos/${videoIdToDisplay}`);
-        console.log(detailResponse.data);
-        setDetails(detailResponse.data);
-      };
-      getDetails();
-    }, [videoIdToDisplay]);
-  
-    if (videos === null) {
-      return <div>Loading ...</div>;
-    }
-
-
   return (
     <>
       <Navigation />
-      <Video id = {videoIdToDisplay} details = {details}/>
+      <Video id = {videoIdToDisplay} />
       <div className = "wrapper">
         <section className="wrapper__left">
           <VideoDetails id={videoIdToDisplay} details = {details} />
